@@ -1,13 +1,3 @@
-@mixin horizontalcenter(){
-  left: 50%;
-  transform: translatex(-50%);
-}
-
-@mixin verticalcenter(){
-  top: 50%;
-  transform: translatey(-50%);
-}
-
 :root {
 	--horns: #fbb03b;
 	--legs: #d88e4e;

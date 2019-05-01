@@ -12,6 +12,7 @@ body {
 	padding: 0;
 	font-family: 'Love Ya Like A Sister', cursive;
 	color: #b7db65;
+	background-color: #2e142d;
 };
 
 // h1, h2, h3, h4, .title {
@@ -25,8 +26,8 @@ h3 {
 .title {
 	background-color: #4b3d46;
 	margin: 0;
-	padding-top: 5vh;
-	font-size: 5em;
+	padding: 5vh;
+	font-size: 8vh;
 	text-align: center;
 	height: 15vh;
 	-webkit-text-stroke: 1px #5a7770; 
@@ -36,13 +37,20 @@ h3 {
 
 .monster-designer {
 	display: flex;
-	height: 85vh;
+	flex-direction: column;
+	height: 100vh;
+}
+
+.content-wrapper {
+	display: flex;
+	flex-direction: row;
 }
 
 .tools {
 	width: 25%;
 	min-width: 250px;
 	background-color: #512350;
+	height: 85vh;
 }
 
 .monster-container {
@@ -50,4 +58,5 @@ h3 {
 	background-color: #2e142d;
 	position: relative;
 	min-width: 750px;
+	height: 85vh;
 }

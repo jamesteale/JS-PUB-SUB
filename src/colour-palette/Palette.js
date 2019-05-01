@@ -21,10 +21,15 @@ class Palette {
 		//Create the label, and the h3 which will wrap the label
 		const label = document.createElement('label');
 		const heading = document.createElement('h3');
+		const instructionsEl = document.createElement('span');
+
+		instructionsEl.textContent = title;
+		instructionsEl.classList.add('palette-instructions');
 		
 		//Glue it all together
-		label.textContent = title;
+		
 		label.appendChild(colourSwatch);
+		label.appendChild(instructionsEl);
 		heading.appendChild(label);
 		container.appendChild(heading);
 		elementToAttachTo.appendChild(container);

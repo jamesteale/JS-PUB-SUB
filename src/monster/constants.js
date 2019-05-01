@@ -1,4 +1,4 @@
-export const SCARY_MODES = ['sm', 'md', 'lg'];
+export const SCARY_MODES = ['small', 'medium', 'large'];
 
 export const CssClassVariables = [
          {

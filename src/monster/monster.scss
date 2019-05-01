@@ -83,7 +83,7 @@
     & .eye_rightmid, & .rightmid_pupil{
       transform-origin: 60% 30%;  
     }
-    &.md{
+    &.medium{
       animation: wobble 1s 0s forwards;
       
       & .horn_left{
@@ -103,7 +103,7 @@
       }
     }
     
-    &.lg{
+    &.large{
       animation: wobble 1s 0s forwards;
       
       & .horn_left, & .horn_right{
@@ -112,7 +112,7 @@
       & .wing_left, & .wing_right{
         transform: translateX(0%) translateY(0%);
       }
-      & .eye_mid, & .mid_pupil{
+      & .eye_mid, & .mid_pupil, & .eye_leftmid, & .leftmid_pupil, & .eye_rightmid, & .rightmid_pupil {
         transform: scale(1);
       }
     } 

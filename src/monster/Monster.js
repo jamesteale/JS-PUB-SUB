@@ -7,13 +7,12 @@ export default class Monster {
 		this._dom = document.querySelector('.monster');
 		this._selection = null;
 		this.built = false;
-		this.willSetToDefault = false; //TEST-CODE
 	}
 
 	buildMonster(){
 		if(!this.built) {
 			const dom = this._dom;
-			dom.classList.add('sm');
+			dom.classList.add('small');
 			dom.innerHTML = getMonsterHTML();
 			dom.addEventListener('click', this._makeSelection);
 		}
@@ -27,26 +26,6 @@ export default class Monster {
 
 		if (srcElement.nodeName !== "svg" && srcElement !== dom) {
       this._addSelection(event.srcElement);
-		}
-		
-		//TEST-CODE :: will pick a random colour;
-		setTimeout(() => {
-			const R = Math.floor(Math.random() * 256);
-			const G = Math.floor(Math.random() * 256);
-			const B = Math.floor(Math.random() * 256);
-
-			this.updateColorOfSelection(`rgb(${R},${G},${B})`);
-		}, 1000);
-
-		//TEST-CODE :: will default back after 20secs;
-		if (!this.willSetToDefault) {
-			setTimeout(() => {
-				this.resetToDefaultColours();
-				this.updateMode(Math.ceil(Math.random() * 3));
-				this.willSetToDefault = false;
-				
-			}, 15000);
-			this.willSetToDefault = true;
 		}
 	}
 
@@ -72,7 +51,8 @@ export default class Monster {
 		}
 	}
 
-	updateColorOfSelection(colour) {
+	//using arrow function to get round `this` if we use inheritence
+	updateColorOfSelection = (colour) =>{
 		const selection = this._selection;
 		const dom = this._dom;
 		
@@ -88,16 +68,11 @@ export default class Monster {
 		}
 	}
 
-	updateMode(mode = 1){
+	//using arrow function to get round `this` if we use inheritence
+	updateMode = mode => {
 		const dom = this._dom;
-		dom.classList.remove("sm", "md", "lg");
-
-		SCARY_MODES.every((item, index) => {
-			if (index < mode) {
-				dom.classList.add(item);
-			}
-			return index < mode;
-		});
+		dom.classList.remove("small", "medium", "large");
+		dom.classList.add(mode);
 	}
 
 	resetToDefaultColours() {

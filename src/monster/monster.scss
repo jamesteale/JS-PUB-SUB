@@ -1,0 +1,132 @@
+@mixin horizontalcenter(){
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+@mixin verticalcenter(){
+  top: 50%;
+  transform: translatey(-50%);
+}
+
+:root {
+	--horns: #fbb03b;
+	--legs: #d88e4e;
+  --eyes: #42210b;
+  --pupil: #fff;
+	--monster-body: #7aa195;
+	--freckles: #5a7770;
+	--wings: #3d3c3c;
+	--tooth: #fff;
+	--mouth: #d96f6a;
+	--tongue: #e39c87
+}
+
+.monster-container{
+  .monster{
+    animation: wobble 1s 0s forwards;
+    
+    & *{
+      transition: all 1s ease;
+		}
+    & .selection.transparent {
+      stroke: cyan;
+      stroke-width:3px;
+      fill: transparent;
+    }
+		& [class*="horn"] {
+			fill: var(--horns);
+		}
+		& [class*="wing"] {
+			fill: var(--wings);
+		}
+		& [class*="tooth"] {
+			fill: var(--tooth);
+		}
+		& [class*="spots"] {
+			fill: var(--freckles);
+		}
+		& [class^="leg"] {
+			fill: var(--legs);
+		}
+		& [class^="eye"] {
+			fill: var(--eyes);
+		}
+		& [class$="_pupil"] {
+			fill: var(--pupil);
+		}
+		& .monster-body {
+			fill: var(--monster-body);
+		}
+		& .mouth {
+			fill: var(--mouth);
+		}
+		& .tongue {
+			fill: var(--tongue);
+		}
+    & .horn_left{
+			transform: translateX(10%) translateY(20%);
+		}
+    & .horn_right{
+			transform: translateX(-10%) translateY(20%);
+    }
+    & .wing_left{
+			transform: translateX(20%);
+    }
+    & .wing_right{
+			transform: translateX(-20%);
+    }
+    & .eye_mid, & .mid_pupil{
+      transform-origin: 50% 20%;  
+      transform: scale(0);
+    }
+    & .eye_leftmid, & .leftmid_pupil, & .eye_rightmid, & .rightmid_pupil{
+      transform: scale(0);
+    }
+    & .eye_leftmid, & .leftmid_pupil{
+      transform-origin: 40% 30%;  
+    }
+    & .eye_rightmid, & .rightmid_pupil{
+      transform-origin: 60% 30%;  
+    }
+    &.md{
+      animation: wobble 1s 0s forwards;
+      
+      & .horn_left{
+      transform: translateX(10%) translateY(10%);
+      }
+      & .horn_right{
+        transform: translateX(-10%) translateY(10%);
+      }
+      & .wing_left{
+        transform: translateX(10%);
+      }
+      & .wing_right{
+        transform: translateX(-10%);
+      }
+      & .eye_leftmid, & .leftmid_pupil, & .eye_rightmid, & .rightmid_pupil{
+        transform: scale(1);
+      }
+    }
+    
+    &.lg{
+      animation: wobble 1s 0s forwards;
+      
+      & .horn_left, & .horn_right{
+        transform: translateX(0%) translateY(0%);
+      }
+      & .wing_left, & .wing_right{
+        transform: translateX(0%) translateY(0%);
+      }
+      & .eye_mid, & .mid_pupil{
+        transform: scale(1);
+      }
+    } 
+  }
+}
+
+@keyframes wobble {
+  0%   {transform: rotate(0deg);}
+  20%  {transform: rotate(-15deg);}
+  63%  {transform: rotate(10deg);}
+  100% {transform: rotate(0deg);}
+}

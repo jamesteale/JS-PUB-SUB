@@ -1,4 +1,4 @@
-import pubSub from './../composition/pubSub'
+import pubSub from './../solutions/composition/pubSub';
 
 const makePubSub = subject => {
 

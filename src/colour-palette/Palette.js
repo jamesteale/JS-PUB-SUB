@@ -1,9 +1,8 @@
 import './palette.scss';
 import PubSub from './../solutions/inheritence/PubSub';
 
-class Palette extends PubSub {
+class Palette {
 	constructor(domElement, title, hexValue = '#c63466'){
-		super();
 		this.colour = hexValue;
 		this.buildPalete(domElement, title, hexValue);
 	}

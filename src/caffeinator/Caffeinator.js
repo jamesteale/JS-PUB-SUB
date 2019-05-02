@@ -1,10 +1,7 @@
 import './cafffeinator.scss';
 
-import PubSub from './../solutions/inheritence/PubSub';
-
-export default class Caffeinator extends PubSub  {
+export default class Caffeinator {
 	constructor(domToAttach, instructions) {
-		super();
 		this.build(domToAttach, instructions);
 	}
 

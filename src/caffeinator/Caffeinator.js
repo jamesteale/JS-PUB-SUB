@@ -1,7 +1,10 @@
 import './cafffeinator.scss';
 
-export default class Caffeinator {
+import PubSub from './../inheritence/PubSub';
+
+export default class Caffeinator extends PubSub  {
 	constructor(domToAttach, instructions) {
+		super();
 		this.build(domToAttach, instructions);
 	}
 
@@ -52,6 +55,8 @@ export default class Caffeinator {
 				domElement.classList.add('large');
 				domElement.classList.remove('small', 'medium');
 			}
+
+			this.publish(this.mode, 'mode-change')
 		});
 	}
 

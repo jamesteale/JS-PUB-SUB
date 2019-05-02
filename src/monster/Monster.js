@@ -2,11 +2,15 @@ import getMonsterHTML from './monsterHTML.js';
 import { CssClassVariables, SCARY_MODES } from "./constants.js";
 import './monster.scss';
 
-export default class Monster {
-	constructor(domElement, listenerCb){
-		this._dom = document.querySelector('.monster');
+import PubSub from './../inheritence/PubSub';
+
+export default class Monster extends PubSub {
+	constructor(domElement){
+		super();
+		this._dom = domElement;
 		this._selection = null;
 		this.built = false;
+		this.buildMonster();
 	}
 
 	buildMonster(){
@@ -40,6 +44,7 @@ export default class Monster {
 		parent.insertBefore(selectionNode, targetElement.nextSibling);
 
 		this._selection = selectionNode;
+		this.publish(null, "selection-change");
 	};
 
 	_removeSelection = () => {
@@ -75,7 +80,7 @@ export default class Monster {
 		dom.classList.add(mode);
 	}
 
-	resetToDefaultColours() {
+	resetToDefaultColours = () => {
 		const style = this._dom.style;
 
 		CssClassVariables.forEach(({cssVariableName, defaultValue}) => style.setProperty(cssVariableName, defaultValue));

@@ -1,7 +1,9 @@
 import './palette.scss';
+import PubSub from './../inheritence/PubSub';
 
-class Palette {
+class Palette extends PubSub {
 	constructor(domElement, title, hexValue = '#c63466'){
+		super();
 		this.colour = hexValue;
 		this.buildPalete(domElement, title, hexValue);
 	}
@@ -43,7 +45,12 @@ class Palette {
 
 			console.log(`The new colour is ${new_colour}`);
 			this.colour = new_colour;
+			this.publish(new_colour, "colour-change");
 		});
+	}
+
+	onSelection = () => {
+		this.publish(this.getColor(), "colour-change");
 	}
 
 	getColor () {

@@ -27,11 +27,7 @@ Implement the pub/sub pattern
 * Pattern Design (White board)
 * Brief
 * Code walk through
-* Tips/ Reminders (Arrow functions, Classes)
+* Tips/ Reminders (Arrow functions, Classes, Arrays functions and bracket notation)
 * Setup, People Organising
 * Start coding.
-
-
-
-### Code Walk through
 

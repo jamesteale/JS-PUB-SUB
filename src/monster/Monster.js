@@ -2,7 +2,7 @@ import getMonsterHTML from './monsterHTML.js';
 import { CssClassVariables, SCARY_MODES } from "./constants.js";
 import './monster.scss';
 
-import PubSub from './../inheritence/PubSub';
+import PubSub from './../solutions/inheritence/PubSub';
 
 export default class Monster extends PubSub {
 	constructor(domElement){

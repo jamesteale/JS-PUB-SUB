@@ -1,6 +1,6 @@
 import './cafffeinator.scss';
 
-import PubSub from './../inheritence/PubSub';
+import PubSub from './../solutions/inheritence/PubSub';
 
 export default class Caffeinator extends PubSub  {
 	constructor(domToAttach, instructions) {

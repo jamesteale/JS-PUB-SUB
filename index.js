@@ -13,5 +13,6 @@ const monster = new Monster(monsterContainer);
 const palette = new Palette(toolContainer, instructionsToColour);
 const caffeinator = new Caffeinator(toolContainer, instructionsToCaffeinate);
 
-palette.subscribe(monster.updateColorOfSelection, "colour-change");
+palette.subscribe(monster.updateColorOfSelection, 'colour-change');
 caffeinator.subscribe(monster.updateMode, 'mode-change');
+monster.subscribe(palette.onSelection, 'selection-change');
